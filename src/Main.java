@@ -28,7 +28,7 @@ public class Main {
             else if (tipo == 3) {
                 diesel++;
             }else if (tipo > 4 || tipo < 1) {
-                System.out.print("NUMERO INVALIDO, DIGITE NOVAMENTE");
+                System.out.print("NUMERO INVÁLIDO, DIGITE NOVAMENTE");
                 tipo = input.nextInt();
             }
             System.out.println("""
