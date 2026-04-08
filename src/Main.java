@@ -3,16 +3,29 @@ import java.util.Scanner;
 public class Main {
 
     static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("digite 3 numeros: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
 
-        System.out.println("digite um numero: ");
-        int num = input.nextInt();
+        int higher = max(a,b,c);
+        System.out.println(higher);
 
-        for (int i = 1; i <= num; i++) {
-            if(i % 2 != 0){
-                System.out.println(i);
-            }
-        }
     }
 
+    public static int max (int x, int y, int z) {
+        int aux = 0;
+
+        if (x > y && y > z) {
+            aux = x;
+        }
+        else if (x < y && z < y) {
+            aux = y;
+        }
+        else if (z > x && y < z) {
+            aux = z;
+        }
+        return aux;
+    }
 }
