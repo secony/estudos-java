@@ -24,11 +24,9 @@ public class Main {
         y.b = input.nextDouble();
         y.c = input.nextDouble();
 
-        double p1 = (x.a + x.b + x.c) / 2;
-        double area1 = Math.sqrt(p1 * (p1 - x.a) * (p1 - x.b) * (p1 - x.c));
+        double area1 = x.area();
 
-        double p2 = (y.a + y.b + y.c) / 2;
-        double area2 = Math.sqrt(p2 * (p2 - y.a) * (p2 - y.b) * (p2 - y.c));
+        double area2 = y.area();
 
         System.out.printf("Area 1: %.4f%n", area1);
         System.out.printf("Area 2: %.4f%n", area2);
