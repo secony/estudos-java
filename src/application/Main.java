@@ -1,35 +1,24 @@
 package application;
 
-import entidade.Triangle;
+import entities.Product;
 
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        Triangle x,y;
-        x = new Triangle();
-        y = new Triangle();
+        Product product = new Product();
+        System.out.println("Enter product data: ");
+        System.out.print("Product name: ");
+        product.name = sc.nextLine();
+        System.out.print("Product price: ");
+        product.price = sc.nextDouble();
+        System.out.print("Product quantity: ");
+        product.quantity = sc.nextInt();
 
-        System.out.println("Medidas triangulo X: ");
-        x.a = input.nextDouble();
-        x.b = input.nextDouble();
-        x.c = input.nextDouble();
-
-        System.out.println("Medidas triangulo Y: ");
-        y.a = input.nextDouble();
-        y.b = input.nextDouble();
-        y.c = input.nextDouble();
-
-        double area1 = x.area();
-
-        double area2 = y.area();
-
-        System.out.printf("Area 1: %.4f%n", area1);
-        System.out.printf("Area 2: %.4f%n", area2);
-
+        System.out.println(product.name + product.price + product.quantity);
     }
 }
