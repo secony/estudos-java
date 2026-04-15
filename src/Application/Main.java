@@ -1,29 +1,34 @@
 
 package Application;
-import util.Calculator;
-
+import entities.Carro;
 import java.util.Locale;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
         Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
 
-        System.out.print("Digite o raio: ");
-        double raio = sc.nextDouble();
+        Carro car = new Carro();
+        Carro car2 = new Carro();
+        Carro car3 = new Carro();
 
-        double c = calculator.circunferencia(raio);
-        double v = calculator.volume(raio);
+        car.ano = 2000;
+        car.marca = "Fiat";
+        car.modelo = "Uno";
 
-        System.out.println(c);
-        System.out.println(v);
-        System.out.println(calculator.PI);
+        car2.marca = "Mercedes";
+        car2.modelo = "C200";
+        car2.ano = 2020;
 
-        sc.close();
+        car3.marca = "Chevrolet";
+        car3.modelo = "Astra";
+        car3.ano = 2011;
+
+        System.out.println(car);
+        System.out.println(car2);
+        System.out.println(car3);
+
+
     }
 
 
