@@ -3,9 +3,8 @@ package entities;
 public class Dados {
 
     private int accountN;
-    public String name;
+    private String name;
     private double saldo;
-    private double valorAdd = 0;
 
     public Dados(int accountN, String name, double saldo) {
         this.accountN = accountN;
@@ -13,13 +12,7 @@ public class Dados {
         this.saldo = saldo;
     }
 
-    public int getAccountN() {
-        return accountN;
-    }
 
-    public double getSaldo() {
-        return saldo;
-    }
     public void setSaldo(double saldo) {
         if (saldo < 0) {
             System.out.println("Saldo não pode ser negativo.");
@@ -28,29 +21,36 @@ public class Dados {
         this.saldo = saldo;
     }
 
-    public String getName() {
-        return name;
+
+    public void deposit(double valor) {
+        if (valor <= 0) {
+            System.out.println("Valor inválido para depósito.");
+            return;
+        }
+        this.saldo += valor;
     }
 
-    public double getValorAdd() {
-        return valorAdd;
+    public void withdraw (double valor) {
+        if (valor <= 0) {
+            System.out.println("Valor inválido para saque.");
+            return;
+        }
+        double total = valor + 5.0;
+        if (total > this.saldo) {
+            System.out.println("Saldo insuficiente. Saldo atual: R$" + this.saldo);
+            return;
+        }
+        this.saldo -= total;
     }
 
-    public void setValorAdd(double valorAdd) {
-        this.valorAdd = valorAdd;
-    }
-
-    public static double addValue(double saldo, double valorAdd ) {
-        return saldo + valorAdd;
-    }
 
     @Override
     public String toString() {
-        return " Account data: " +
-                "\n "+
-                "\n account = " + accountN +
-                "\n name = '" + name + '\'' +
-                "\n saldo = " + saldo;
+        return " ////// ACCOUNT DATA: ////// " +
+                "\n " +
+                "\n ACCOUNT = " + accountN +
+                "\n NAME = " + name  +
+                "\n BALANCE = " + saldo;
 
     }
 }
