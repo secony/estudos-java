@@ -1,6 +1,5 @@
-package application;
 
-import entities.Dados;
+package application;
 
 import java.util.Scanner;
 
@@ -8,56 +7,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int senha = 2805;
-        double saldo = 0;
+        System.out.print("Digite a quantidade: ");
+        int quantidade = input.nextInt();
 
-        System.out.println("--------WELLCOME---------");
+        int[] lista = new int[quantidade];
 
-        //ADIQUIRINDO DADOS DO USUARIO
-
-        System.out.print("Enter accont number: ");
-        int accountN = input.nextInt();
-
-        if  (accountN != senha) {
-            System.out.println("SENHA INCORRETA!");
-            return;
-        }
-        System.out.print("Enter name: ");
-        String name = input.next();
-
-        Dados dados = new Dados(accountN, name, saldo);
-
-        System.out.print("Is there a initial deposit (y/n): ");
-        String answer = input.next();
-
-        // VERIFICANDO SE QUER FAZER DEPOSITO, SE SIM INSIRA A QUANTIDADE
-        if (answer.equals("y")) {
-            System.out.print("enter initial deposit: R$");
-            dados.setSaldo(input.nextDouble());
-        } else if (answer.equals("n")) {
-            dados.setSaldo(0);
+        for (int i = 0; i < quantidade; i++) {
+            System.out.print("digite o numero: ");
+            lista[i] = input.nextInt();
         }
 
-        System.out.println(dados);
-        System.out.println();
+        double soma = 0;
+        for (int i = 0; i < quantidade; i++) {
+            soma = soma + lista[i];
 
-        // DEPOSITO
-        System.out.print("Enter a deposit amount: R$");
-        double depositAmount = input.nextDouble();
-        dados.deposit(depositAmount);
+        }
+        double media =  soma / quantidade;
 
-        System.out.println(dados);
-
-        System.out.println();
-
-        // SAQUE, COM R$ 5,00 DE TAXA
-        System.out.print("Enter a withdraw amount: R$");
-        double withdrawAmount = input.nextDouble();
-        dados.withdraw(withdrawAmount);
-
-        System.out.println(dados);
-
+        System.out.println("Média: " + media);
 
     }
-
 }
