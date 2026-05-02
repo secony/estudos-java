@@ -1,35 +1,31 @@
 
 package application;
 
-import entities.Product;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Digite a quantidade de produtos: ");
-        int quantidade = input.nextInt();
+        double sum = 0;
 
-        Product[] products = new Product[quantidade];
+        System.out.print("quantos numeros vai digitar? (até 10): ");
+        int numDigitado = input.nextInt();
 
-        for (int i = 0; i < products.length; i++) {
-            System.out.print("Digite o nome do produto: ");
-            String nome = input.next();
+        int[] lista = new int[numDigitado];
 
-            System.out.print("Digite o preço: ");
-            double price = input.nextDouble();
-            products[i] = new Product(nome,price);
+        for (int i = 0; i < numDigitado; i++ ) {
+            System.out.println("Digite um numero: ");
+            lista[i] = input.nextInt();
         }
 
-        double soma= 0;
-
-        for (int i = 0; i < products.length; i++) {
-            soma += products[i].getPrice();
+        for (int i = 0; i < numDigitado; i++) {
+            sum += lista[i];
 
         }
-        double media = soma/products.length;
 
-        System.out.println("media: "+media);
+        double media = sum / numDigitado;
+
+        System.out.println("soma: " + sum+ " media: " + media);
     }
 }
