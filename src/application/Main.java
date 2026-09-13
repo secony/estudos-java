@@ -1,19 +1,31 @@
 package application;
 import java.util.Scanner;
-import entities.Rectangle;
+import entities.Funcionario;
 
 public class Main {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Funcionario funcionario = new Funcionario();
 
-            Scanner input = new Scanner(System.in);
+        System.out.print("Digite o nome do funcionario: ");
+        funcionario.nome = input.nextLine();
+        System.out.println();
 
-            Rectangle rectangle = new Rectangle();
+        System.out.print("Salario bruto do Funcionario: ");
+        funcionario.salarioBruto = input.nextDouble();
+        System.out.println();
 
-            System.out.println("Enter the width and height of the rectangle: ");
-            rectangle.width = input.nextDouble();
-            rectangle.height = input.nextDouble();
+        System.out.print("Taxa do Funcionario: ");
+        funcionario.taxa = input.nextDouble();
+        System.out.println();
 
-            System.out.println(rectangle);
-        }
+        System.out.println(funcionario);
+
+        System.out.println("Porcentagem de aumento: ");
+        int porcentagemAumento = input.nextInt();
+        funcionario.aumento(porcentagemAumento);
+
+        System.out.println(funcionario);
+    }
 
 }
