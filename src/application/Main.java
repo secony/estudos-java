@@ -16,8 +16,7 @@ public class Main {
         System.out.print("quantity: ");
         produto.quantity = input.nextInt();
 
-        System.out.println("Enter the number of products you want to add: ");
-        produto.quantity = input.nextInt();
-        public
+        System.out.println(produto);
+
     }
 }
