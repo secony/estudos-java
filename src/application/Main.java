@@ -1,39 +1,19 @@
 package application;
-import entities.Product;
 import java.util.Scanner;
+import entities.Rectangle;
 
 public class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        Product produto  = new Product();
-        Scanner input = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter product data: ");
+            Rectangle rectangle = new Rectangle();
 
-        System.out.print("name: ");
-        produto.name = input.nextLine();
+            System.out.println("Enter the width and height of the rectangle: ");
+            rectangle.width = input.nextDouble();
+            rectangle.height = input.nextDouble();
 
-        System.out.print("price: ");
-        produto.price = input.nextDouble();
+            System.out.println(rectangle);
+        }
 
-        System.out.print("quantity: ");
-        produto.quantity = input.nextInt();
-
-        System.out.println(produto);
-
-        System.out.print("Enter the number of products you want to add: ");
-        int quantity = input.nextInt();
-        produto.AddProducts(quantity);
-
-        System.out.println("Product added successfully");
-
-        System.out.println(produto);
-
-        System.out.print("Enter the number of products you want to remove: ");
-        int quantity2 = input.nextInt();
-        produto.RemoveProducts(quantity2);
-
-        System.out.println(produto);
-
-    }
 }
