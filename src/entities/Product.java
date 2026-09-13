@@ -16,11 +16,11 @@ public class Product {
 
     public void RemoveProducts (int quantity){
 
-        this.quantity += quantity;
+        this.quantity -= quantity;
     }
 
     public String toString(){
-        return "Name: " + name + ", Price: " + price + ", Quantity: " + quantity;
+        return "Name: " + name + ", Price: " + price + ", Quantity: " + quantity + ", Total: " + TotalValueInStock();
     }
     }
 
