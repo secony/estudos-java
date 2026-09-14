@@ -1,50 +1,29 @@
 package application;
 import java.util.Scanner;
-import entities.Student;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
+public class Main {
+
+    public static final double PI = 3.14;
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Student student = new Student();
 
-        System.out.print("Nome: ");
-        student.name = sc.nextLine();
+        System.out.print("Digite o raio: ");
+        double raio = sc.nextDouble();
 
-        System.out.print("Primeiro trimeste: ");
-        student.nota1 = sc.nextInt();
+        double c =  circunferencia(raio);
+        double v = volume(raio);
 
-        while (student.nota1 > 30 || student.nota1 < 0) {
-            System.out.println("nota invalida!");
-            System.out.print("Primeiro trimeste: ");
-            student.nota1 = sc.nextInt();
-        }
-
-        System.out.print("Segundo trimeste: ");
-        student.nota2 = sc.nextInt();
-        while (student.nota2 > 35 || student.nota2 < 0) {
-            System.out.println("nota invalida!");
-            System.out.print("Segundo trimeste: ");
-            student.nota2 = sc.nextInt();
-
-        }
-
-        System.out.print("Terceito trimeste: ");
-        student.nota3 = sc.nextInt();
-        while (student.nota3 > 35 || student.nota3 < 0) {
-            System.out.println("nota invalida!");
-            System.out.print("Terceito trimeste: ");
-            student.nota3 = sc.nextInt();
-
-        }
-
-
-
-        System.out.println(student.finalNota());
-        System.out.println(student.AprovadoReprovado());
+        System.out.println("PI " + PI);
+        System.out.println("Circunferencia: " + c);
+        System.out.println("Volume: " + v);
 
         sc.close();
     }
-
+    public static double circunferencia(double raio){
+        return (2 * PI * raio);
+    }
+    public static double volume(double raio){
+        return (4* PI * raio *  raio * raio) /3;
+    }
 }
