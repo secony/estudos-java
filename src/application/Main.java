@@ -1,24 +1,20 @@
 package application;
-import util.Calculator;
+import util.CurrencyConverter;
 
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o raio: ");
-        double raio = sc.nextDouble();
+        System.out.println("Valor do dollar: ");
+        double dollarPrice = sc.nextDouble();
 
-        double c =  Calculator.circunferencia(raio);
-        double v = Calculator.volume(raio);
+        System.out.println("Quantos dollar vai comprar: ");
+        double dollarTotal = sc.nextDouble();
 
-        System.out.println("PI " + Calculator.PI);
-        System.out.println("Circunferencia: " + c);
-        System.out.println("Volume: " + v);
+        double reais = CurrencyConverter.converter(dollarPrice, dollarTotal);
 
-        sc.close();
+        System.out.println("Quantos reais: " + reais);
     }
-
 }
