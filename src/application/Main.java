@@ -12,27 +12,34 @@ public class Main
         System.out.print("Nome: ");
         student.name = sc.nextLine();
 
-        System.out.println("Primeiro trimeste: ");
+        System.out.print("Primeiro trimeste: ");
         student.nota1 = sc.nextInt();
-        if (student.nota1 > 30 || student.nota1 < 0)
-        {
+
+        while (student.nota1 > 30 || student.nota1 < 0) {
             System.out.println("nota invalida!");
-            return;
+            System.out.print("Primeiro trimeste: ");
+            student.nota1 = sc.nextInt();
         }
 
-        System.out.println("Segundo trimeste: ");
+        System.out.print("Segundo trimeste: ");
         student.nota2 = sc.nextInt();
-        if (student.nota2 > 35 || student.nota2 < 0){
+        while (student.nota2 > 35 || student.nota2 < 0) {
             System.out.println("nota invalida!");
-            return;
+            System.out.print("Segundo trimeste: ");
+            student.nota2 = sc.nextInt();
+
         }
 
-        System.out.println("Terceito trimeste: ");
+        System.out.print("Terceito trimeste: ");
         student.nota3 = sc.nextInt();
-        if (student.nota3 > 35 || student.nota3 < 0){
+        while (student.nota3 > 35 || student.nota3 < 0) {
             System.out.println("nota invalida!");
-            return;
+            System.out.print("Terceito trimeste: ");
+            student.nota3 = sc.nextInt();
+
         }
+
+
 
         System.out.println(student.finalNota());
         System.out.println(student.AprovadoReprovado());
