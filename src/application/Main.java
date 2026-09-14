@@ -1,31 +1,43 @@
 package application;
 import java.util.Scanner;
-import entities.Funcionario;
+import entities.Student;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        Funcionario funcionario = new Funcionario();
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        Student student = new Student();
 
-        System.out.print("Digite o nome do funcionario: ");
-        funcionario.nome = input.nextLine();
-        System.out.println();
+        System.out.print("Nome: ");
+        student.name = sc.nextLine();
 
-        System.out.print("Salario bruto do Funcionario: ");
-        funcionario.salarioBruto = input.nextDouble();
-        System.out.println();
+        System.out.println("Primeiro trimeste: ");
+        student.nota1 = sc.nextInt();
+        if (student.nota1 > 30 || student.nota1 < 0)
+        {
+            System.out.println("nota invalida!");
+            return;
+        }
 
-        System.out.print("Taxa do Funcionario: ");
-        funcionario.taxa = input.nextDouble();
-        System.out.println();
+        System.out.println("Segundo trimeste: ");
+        student.nota2 = sc.nextInt();
+        if (student.nota2 > 35 || student.nota2 < 0){
+            System.out.println("nota invalida!");
+            return;
+        }
 
-        System.out.println(funcionario);
+        System.out.println("Terceito trimeste: ");
+        student.nota3 = sc.nextInt();
+        if (student.nota3 > 35 || student.nota3 < 0){
+            System.out.println("nota invalida!");
+            return;
+        }
 
-        System.out.println("Porcentagem de aumento: ");
-        int porcentagemAumento = input.nextInt();
-        funcionario.aumento(porcentagemAumento);
+        System.out.println(student.finalNota());
+        System.out.println(student.AprovadoReprovado());
 
-        System.out.println(funcionario);
+        sc.close();
     }
 
 }
