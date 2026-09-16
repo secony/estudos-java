@@ -1,6 +1,6 @@
-package application;
+package Sistema_Bancario.application;
 
-import entities.Dados;
+import Sistema_Bancario.entities.Dados;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class Main {
         System.out.print("Enter accont number: ");
         int accountN = input.nextInt();
 
-        if  (accountN != senha) {
+        if (accountN != senha) {
             System.out.println("SENHA INCORRETA!");
             return;
         }

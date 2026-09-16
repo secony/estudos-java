@@ -1,4 +1,4 @@
-package entities;
+package Sistema_Bancario.entities;
 
 public class Dados {
 
@@ -30,7 +30,7 @@ public class Dados {
         this.saldo += valor;
     }
 
-    public void withdraw (double valor) {
+    public void withdraw(double valor) {
         if (valor <= 0) {
             System.out.println("Valor inválido para saque.");
             return;
@@ -49,7 +49,7 @@ public class Dados {
         return " ////// ACCOUNT DATA: ////// " +
                 "\n " +
                 "\n ACCOUNT = " + accountN +
-                "\n NAME = " + name  +
+                "\n NAME = " + name +
                 "\n BALANCE = " + saldo;
 
     }
