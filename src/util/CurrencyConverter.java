@@ -1,5 +1,3 @@
-package util;
-
 public class CurrencyConverter {
 
     public static double converter (double dollar, double quantity){
