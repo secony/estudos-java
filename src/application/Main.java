@@ -9,12 +9,16 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Locale.setDefault(Locale.US);
 
+        // Recebendo os "atributos"
+
         System.out.print("Nome do produto: ");
         String name = input.nextLine();
         System.out.print("Preco do produto: ");
         int price = input.nextInt();
         System.out.print("Quantidade: ");
         int quantity = input.nextInt();
+
+        // somente agora instanciar o objeto para que ele ja receba os atributos com valores reais.
 
         Product product = new Product(name, price, quantity);
 
