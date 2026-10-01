@@ -30,6 +30,17 @@ public class Product {
         this.name = name;
     }
 
+    public double getPrice(){
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
     // Recebe uma quantidade e um preço, e retorna a multiplicação deles
 
     public double totalPrice(int quantity, double price) {

@@ -24,6 +24,8 @@ public class Main {
         // Atuializando o nome com set e printando o novo nome pelo get
         product.setName("computer");
         System.out.println("Novo nome de produto: " + product.getName());
+        product.setPrice(4000);
+        System.out.println("Novo preco do produto: " + product.getPrice());
 
         System.out.println(product);
 
