@@ -19,8 +19,11 @@ public class Main {
         int quantity = input.nextInt();
 
         // somente agora instanciar o objeto para que ele ja receba os atributos com valores reais.
-
         Product product = new Product(name, price, quantity);
+
+        // Atuializando o nome com set e printando o novo nome pelo get
+        product.setName("computer");
+        System.out.println("Novo nome do produto: " + product.getName());
 
         System.out.println(product);
 

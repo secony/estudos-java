@@ -2,9 +2,9 @@ package entities;
 
 public class Product {
 
-    public String name;
-    public double price;
-    public int quantity;
+    private String name;
+    private double price;
+    private int quantity;
 
     // Criando um construtor para inicializar um objeto ja com atributos
 
@@ -19,6 +19,15 @@ public class Product {
         this.name = name;
         this.price = price;
         quantity = 0;
+    }
+
+    // Getters e Setters
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     // Recebe uma quantidade e um preço, e retorna a multiplicação deles
