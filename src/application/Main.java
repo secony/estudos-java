@@ -1,45 +1,43 @@
 package application;
-import entities.Product;
+import entities.Conta;
 
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         Locale.setDefault(Locale.US);
+        Scanner input = new Scanner(System.in);
 
-        // Recebendo os "atributos"
+        // recebendo os dados
 
-        System.out.print("Nome do produto: ");
-        String name = input.nextLine();
-        System.out.print("Preco do produto: ");
-        int price = input.nextInt();
-        System.out.print("Quantidade: ");
-        int quantity = input.nextInt();
+        System.out.print("Titular: ");
+        String titular = input.nextLine();
 
-        // somente agora instanciar o objeto para que ele ja receba os atributos com valores reais.
-        Product product = new Product(name, price, quantity);
+        System.out.print("Conta: ");
+        int numero = input.nextInt();
 
-        // Atuializando o nome com set e printando o novo nome pelo get
-        product.setName("computer");
-        System.out.println("Novo nome de produto: " + product.getName());
-        product.setPrice(4000);
-        System.out.println("Novo preco do produto: " + product.getPrice());
+        System.out.print("Saldo: ");
+        double saldo = input.nextDouble();
 
-        System.out.println(product);
+        // construtor
 
-        System.out.print("Quantidade para adicionar: ");
-        int quantidadeAdd = input.nextInt();
-        product.addQuantity(quantidadeAdd);
+        Conta conta1 = new Conta(titular, numero, saldo);
 
-        System.out.println(product);
+        System.out.println(" ");
 
-        System.out.println("Quantidade para tirar: ");
-        int quantidadeRemove = input.nextInt();
-        product.subtractQuantity(quantidadeRemove);
-        System.out.println(product);
+        System.out.print("Depósito: ");
+        double deposito = input.nextDouble();
+        conta1.depositar(deposito);
 
+        System.out.println(" ");
+
+        System.out.print("Saque: ");
+        double saque = input.nextDouble();
+        conta1.sacar(saque);
+
+
+        System.out.println(conta1);
 
     }
 }
