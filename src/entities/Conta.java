@@ -11,8 +11,7 @@ public class Conta {
     }
 
 
-
-    public Conta(String titular, int numero,  double saldo) {
+    public Conta(String titular, int numero, double saldo) {
 
         if (saldo < 0) {
             throw new IllegalArgumentException("Saldo não pode ser negativo");
@@ -23,25 +22,22 @@ public class Conta {
         this.numero = numero;
     }
 
-    public void depositar(double valor){
-        if (valor > 0){
+    public void depositar(double valor) {
+        if (valor > 0) {
             saldo += valor;
             System.out.println("Depositado com sucesso");
-        }
-        else if (valor <= 0) {
+        } else if (valor <= 0) {
             System.out.println("Valor invalido");
         }
     }
 
-    public void sacar(double valor){
-        if (valor <= saldo && valor > 0){
+    public void sacar(double valor) {
+        if (valor <= saldo && valor > 0) {
             saldo -= valor;
             System.out.println("Sacado com sucesso");
-        }
-        else if (valor> saldo) {
+        } else if (valor > saldo) {
             System.out.println("Saldo insuficiente");
-        }
-        else if (valor <= 0){
+        } else if (valor <= 0) {
             System.out.println("Saque invalido");
         }
 
