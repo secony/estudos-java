@@ -277,11 +277,15 @@ public class Main {
 
                                         default:
                                             return;
+
                                     }
 
 
                             }
                             break;
+
+
+
 
                         } else {
                             System.out.println("Senha errada! Mais " + (3 - i) + " tentativas");
