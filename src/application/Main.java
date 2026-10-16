@@ -276,15 +276,13 @@ public class Main {
                                             break;
 
                                         default:
-                                            return;
+                                            break;
 
                                     }
 
 
                             }
                             break;
-
-
 
 
                         } else {
